@@ -9,7 +9,7 @@ export default function Layout({ children }) {
           <a>
             <h1>
               <span>Fran_The_Dev</span>
-              <span>JAMstack Blogs</span>
+              <span>JAMstack Blogs + Videos</span>
             </h1>
             <h2>JAMstack Joy</h2>
           </a>

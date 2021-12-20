@@ -1,5 +1,7 @@
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Skeleton from '../../components/Skeleton'
+
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -18,7 +20,7 @@ const paths = res.items.map(item => {
 })
         return {
             paths,
-            fallback: false
+            fallback: true
         }
 
 
@@ -29,6 +31,16 @@ export async function getStaticProps({ params }) {
         content_type: 'memory',
         'fields.slug': params.slug
     })
+
+if(!items.length) {
+    return {
+        redirect: {
+            destination: '/',
+            permanent: false
+        }
+    }
+}
+
     return {
         props: { memory: items[0]},
         revalidate: 1
@@ -37,6 +49,7 @@ export async function getStaticProps({ params }) {
 
 
 export default function BlogDetails({memory}) {
+    if(!memory) return <Skeleton />
     const {title, youTubeEmbedUrl, details } = memory.fields
     return (
         <div>
