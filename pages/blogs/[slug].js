@@ -30,7 +30,8 @@ export async function getStaticProps({ params }) {
         'fields.slug': params.slug
     })
     return {
-        props: { memory: items[0]}
+        props: { memory: items[0]},
+        revalidate: 1
     }
 }
 
