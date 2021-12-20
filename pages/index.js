@@ -1,27 +1,25 @@
-import { createClient } from "contentful"
-
+import { createClient } from 'contentful'
 
 export async function getStaticProps() {
 
-
-  const client = createClient({ 
+  const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY, 
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   })
 
-const res = await client.getEntries({ content_type:'memory'})
+  const res = await client.getEntries({ content_type: "memory" })
 
-return {
-  props: {
-    memories: res.items
+  return {
+    props: {
+      recipes: res.items,
+    }
   }
 }
 
-} 
+export default function Recipes({ recipes }) {
+  console.log(recipes)
 
-export default function Home({memories}) {
-  console.log(memories)
-return (
+  return (
     <div className="blog-list">
       Nerd Blogs
     </div>
