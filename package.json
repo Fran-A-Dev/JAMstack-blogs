@@ -5,14 +5,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "node. /scripts/build-search.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.10.0",
+    "algoliasearch": "^4.11.0",
     "contentful": "^9.1.5",
+    "dotenv": "^10.0.0",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-instantsearch-dom": "^6.18.0"
   },
   "devDependencies": {
     "eslint": "8.5.0",
