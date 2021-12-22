@@ -1,6 +1,6 @@
 import { createClient } from 'contentful'
 import BlogCard from '../components/BlogCard'
-import Search from '../components/Search/index'
+
 
 
 export async function getStaticProps() {
@@ -25,7 +25,7 @@ export default function Home({ blogs }) {
 
   return (
     <div className="blog-list">
-      <Search />
+    
    {blogs.map(blog => (
      <BlogCard key={blog.sys.id} blog={blog}    />
    ))}
