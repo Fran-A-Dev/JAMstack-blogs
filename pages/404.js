@@ -12,10 +12,12 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="not-found">
-      <h1>404</h1>
-      <h2>Darnit, this page does not exist just like my love life 😔</h2>
-      <p>
+    <div>
+      <h1 className="font-bold text-3xl">404</h1>
+      <h2 className="text-3xl">
+        Darnit, this page does not exist just like my love life 😔
+      </h2>
+      <p text-xl>
         Redirect to the <Link href="/">Home Page</Link> for more JAMstack
         goodness..
       </p>
