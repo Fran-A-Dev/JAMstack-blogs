@@ -1,70 +1,26 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
-export default function BlogCard({blog}) {
-    const {title, slug, thumbnail } = blog.fields
-    return (
-        <div className="card">
-            <div className="featured">
-                <Image  
-                src={'https:' + thumbnail.fields.file.url}
-                width={thumbnail.fields.file.details.image.width}
-                height={thumbnail.fields.file.details.image.height}
-                alt="thumb"
-                />
-            </div>
-<div className="content">
-    <div className="info">
-        <h4>{title}</h4>
-    </div>
-    <div className="actions">
-        <Link href={'/blogs/' + slug }>
-            <a>
-                Read more...
-            </a>
-        </Link>
-    </div>
+const BlogCard = ({ blog }) => {
+  const { title, slug, thumbnail } = blog.fields;
 
-</div>
-
-<style jsx>{`
-        .card {
-          transform: rotateZ(0deg);
-          
-        }
-        .content {
-          background: #fff;
-          box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-          margin: 0;
-          position: relative;
-          top: -40px;
-          left: -10px;
-          border-radius:25px
-        }
-        .info {
-          padding: 16px;
-        }
-        .info h4 {
-          margin: 4px 0;
-          text-transform: uppercase;
-        }
-        .info p {
-          margin: 0;
-          color: #777;
-        }
-        .actions {
-          margin-top: 20px;
-          display: flex;
-          justify-content: flex-end;
-        }
-        .actions a {
-          color: #fff;
-          background: #f01b29;
-          padding: 16px 24px;
-          text-decoration: none;
-        }
-
-      `}</style>
+  return (
+    <Link href={"/blogs/" + slug}>
+      <a className="group">
+        <div className="w-full bg-gray-200 rounded-3xl overflow-hidden">
+          <div className="relative group-hover:opacity-75 h-72">
+            <Image
+              src={"https:" + thumbnail.fields.file.url}
+              alt="thumb"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
-    )
-}
+        <h3 className="mt-4 text-lg font-medium text-gray-900">{title}</h3>
+      </a>
+    </Link>
+  );
+};
+
+export default BlogCard;
