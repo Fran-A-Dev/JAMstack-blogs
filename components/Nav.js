@@ -11,6 +11,11 @@ export default function Nav() {
           </a>
         </Link>
       </div>
+      <div className="absolute bottom-0 right-11 text-lg  font-bold flex items-center justify-between max-w-6xl pt-4 pb-2 px-4 mx-auto lg:max-w-screen-xl">
+        <Link href="https://github.com/Fran-A-Dev">
+          <a>My Github Projects</a>
+        </Link>
+      </div>
     </header>
   );
 }

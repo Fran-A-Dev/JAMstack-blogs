@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 import BlogPageDetails from "../../components/BlogPageDetails";
-
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -44,10 +44,15 @@ export async function getStaticProps({ params }) {
 
 export default function BlogDetails({ memory }) {
   if (!memory) return <div>...loading</div>;
-  const { title, youTubeEmbedUrl, details } = memory.fields;
+  const { details } = memory.fields;
   return (
-    <div>
+    <div className="min-h-screen py-12 sm:pt-20">
       <BlogPageDetails memory={memory} />
+      <div>
+        <p className="pt-16 space-y-8 md:space-x-4 lg:space-x-8 max-w-3xl w-11/12 mx-auto">
+          {documentToReactComponents(details)}
+        </p>
+      </div>
     </div>
   );
 }
