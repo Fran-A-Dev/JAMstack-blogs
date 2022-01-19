@@ -26,11 +26,8 @@ export default function Recipes({ blogs }) {
     <div className="text-3xl">
       <Head>
         <title>JAMstack Memories</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-          httpEquiv="Content-Type"
-          content="text/html; charset=ISO-8859-1"
-        />
+
+        <meta content="text/html; charset=ISO-8859-1" />
         <meta name="description" content="Fran's Netlify Nerd Blogs" />
         <meta property="og:title" content="JAMstack eCommerce " />
         <meta property="og:type" content="website" />
