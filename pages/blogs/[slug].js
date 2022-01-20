@@ -49,7 +49,7 @@ export default function BlogDetails({ memory }) {
     <div className="min-h-screen py-12 sm:pt-20">
       <BlogPageDetails memory={memory} />
       <div>
-        <p className="pt-16 space-y-8 md:space-x-4 lg:space-x-8 max-w-3xl w-11/12 mx-auto">
+        <p className="pt-16 space-y-8 md:space-x-4 lg:space-x-8 max-w-3xl w-11/12 mx-auto content-center">
           {documentToReactComponents(details)}
         </p>
       </div>

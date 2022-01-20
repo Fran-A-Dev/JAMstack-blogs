@@ -13,7 +13,7 @@ export default function page() {
       <h2 className="mt-3 max-w-md mx-auto text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-x-3xl">
         I am Fran the Dev, I am a JAMstack coder who enjoys building demo sites
         for use cases on all channels of industry. In my spare time, I also like
-        to rock climb. Help me revolutionzie the way the web works!
+        to rock climb. Help me revolutionize the way the web works!
       </h2>
 
       <div className="mt-5 max-w-md mx-auto flex justify-center items-center md:mt-8">
