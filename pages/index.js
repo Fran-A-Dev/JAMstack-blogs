@@ -25,7 +25,7 @@ export default function Recipes({ blogs }) {
   return (
     <div className="text-3xl">
       <Head>
-        <title>JAMstack Memories</title>
+        <title>Jamstack Memories</title>
 
         <meta content="text/html; charset=ISO-8859-1" />
         <meta name="description" content="Fran's Netlify Nerd Blogs" />
